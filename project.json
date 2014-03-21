@@ -1,10 +1,7 @@
 {
     "name" : "bem-protein",
     "version" : "0.0.1",
-    "cwd" : ".",
-    "level" : "blocks",
     "bundles" : "bundles",
-    "mergedBundle" : "merged",
     "assets" : "assets",
     "libDir" : "bower_components",
     "libLevels" : [ 

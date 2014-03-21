@@ -24,7 +24,7 @@ module.exports = function (grunt) {
     var tasks = {
 
         project: project,
-        bundle: project.mergedBundle,
+        bundle: "index",
 
         watch: {
             blocks: {

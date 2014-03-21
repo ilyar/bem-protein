@@ -15,10 +15,6 @@
 
 module.exports = {
 
-    'bem-bl' : {
-        type     : 'git',
-        url      : 'git://github.com/bem/bem-bl.git'
-    },
     'bem-history' : {
         type     : 'git',
         url      : 'git://github.com/bem/bem-history.git'
@@ -52,9 +48,9 @@ module.exports = {
         type     : 'git',
         url      : 'git://github.com/bem/bem-sets.git'
     },
-    'bem-yana' : {
+    'bem-techs' : {
         type     : 'git',
-        url      : 'git://github.com/narqo/bem-yana.git'
+        url      : 'git://github.com/verybigman/bem-techs.git'
     }
 
 };

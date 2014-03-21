@@ -1,20 +1,19 @@
 var PATH = require('path'),
-    environ = require('bem-environ')({ libDir: 'bower_components' }),
+    project = require('../../project.json'),
+    environ = require('bem-environ')({ libDir: project.libDir }),
     join = PATH.join,
 
-    PRJ_ROOT = environ.PRJ_ROOT,
-    PRJ_TECHS = join(PRJ_ROOT, '.bem/techs'),
-    BEMCORE_TECHS = environ.getLibPath('bem-core', '.bem/techs');
+    BEMLIB_TECHS = environ.getLibPath('bem-techs', '.bem/techs');
 
 exports.getTechs = function() {
 
     return {
-        'vanilla.js'    : join(BEMCORE_TECHS, 'vanilla.js.js'),
-        'browser.js'    : join(BEMCORE_TECHS, 'browser.js.js'),
-        'css'           : 'v2/css',
-        'bemhtml'       : join(BEMCORE_TECHS, 'bemhtml.js')
+        'bemhtml'       : join(BEMLIB_TECHS, 'bemhtml.js'),
+        'js'            : 'v2/js-i',
+        'sass'          : join(BEMLIB_TECHS, 'less'),
+        'md'            : join(BEMLIB_TECHS, 'md')
     };
 
 };
 
-exports.defaultTechs = ['css', 'browser.js', 'bemhtml'];
+exports.defaultTechs = ['sass', 'js', 'bemhtml', 'md'];

@@ -1,28 +1,24 @@
 var PATH = require('path'),
     BEM = require('bem'),
-    environ = require('bem-environ')({ libDir: 'bower_components' }),
+    project = require('../../project.json'),
+    environ = require('bem-environ')({ libDir: project.libDir }),
     join = PATH.join,
 
     PRJ_ROOT = environ.PRJ_ROOT,
-    PRJ_TECHS = join(PRJ_ROOT, '.bem/techs'),
-    BEMCORE_TECHS = environ.getLibPath('bem-core', '.bem/techs');
+    BLOCKS_PATH = join(environ.PRJ_ROOT, 'blocks'),
+    BEMCORE_TECHS = environ.getLibPath('bem-core', '.bem/techs'),
+    BEM_TECHS = environ.getLibPath('bem-techs', '.bem/techs');
 
 exports.getTechs = function() {
 
     return {
-        'bemjson.js'         : join(PRJ_TECHS, 'bemjson.js'),
+        'bemjson.js'         : join(BEM_TECHS, 'bemjson.js'),
         'bemdecl.js'         : 'v2/bemdecl.js',
         'deps.js'            : 'v2/deps.js',
-        'js'                 : 'v2/js-i',
-        'vanilla.js'         : join(BEMCORE_TECHS, 'vanilla.js.js'),
-        'browser.js'         : join(BEMCORE_TECHS, 'browser.js.js'),
-        'browser.js+bemhtml' : join(BEMCORE_TECHS, 'browser.js+bemhtml.js'),
-        'css'                : 'v2/css',
-        'ie.css'             : 'v2/ie.css',
-        'ie6.css'            : 'v2/ie6.css',
-        'ie7.css'            : 'v2/ie7.css',
-        'ie8.css'            : 'v2/ie8.css',
-        'ie9.css'            : 'v2/ie9.css',
+
+        'js'                 : 'v2/js-i.js',
+
+        'sass'               : 'sass.js',
 
         'bemhtml'            : join(BEMCORE_TECHS, 'bemhtml.js'),
         'html'               : join(BEMCORE_TECHS, 'html.js')
@@ -40,13 +36,17 @@ exports.getConfig = function() {
     return BEM.util.extend(this.__base() || {}, {
         bundleBuildLevels: this.resolvePaths(
             [
-                'bem-core/common.blocks', 'bem-core/desktop.blocks', 'bem-components/common.blocks', 'bem-components/desktop.blocks'
+                'bem-core/common.blocks'
+//                'bem-core/desktop.blocks',
+//                'bem-components/common.blocks'
+//                'bem-components/desktop.blocks'
             ]
             .map(function(path) { return PATH.resolve(environ.LIB_ROOT, path); })
             .concat([
-                'blocks'
+                'base',
+                'typo'
             ]
-            .map(function(path) { return PATH.resolve(environ.PRJ_ROOT, path); })))
+            .map(function(path) { return PATH.resolve(BLOCKS_PATH, path); })))
     });
 
 };

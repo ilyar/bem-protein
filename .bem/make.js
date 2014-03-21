@@ -1,8 +1,8 @@
 /* jshint node:true */
 /* global MAKE */
 
-var environ = require('bem-environ')({ libDir: 'bower_components' }),
-    project = require('../project.json');
+var project = require('../project.json'),
+    environ = require('bem-environ')({ libDir: project.libDir });
 
 environ.extendMake(MAKE);
 
@@ -15,7 +15,7 @@ MAKE.decl('Arch', {
 
     libraries: [
         'bem-core @ v2.0.0',
-        'bem-components @ 79ca4740c605339941e2a560c6681bfea02f00b3'
+        'bem-techs @ 9cba685b72459161dcdc8ec75d614e8f88b5811e'
     ]
 
 });
@@ -30,12 +30,15 @@ MAKE.decl('BundleNode', {
             'bemdecl.js',
             'deps.js',
             'bemhtml',
-            'browser.js+bemhtml',
-            'css',
-            'ie.css',
+            'js',
+            'sass',
             'html'
         ];
 
+    },
+
+    getForkedTechs : function() {
+        return this.__base().concat(['js', 'sass']);
     },
 
     'create-browser.js+bemhtml-optimizer-node': function(tech, sourceNode, bundleNode) {
@@ -44,18 +47,4 @@ MAKE.decl('BundleNode', {
         }, this);
     }
 
-});
-
-
-MAKE.decl('BundlesLevelNode', {
-
-    mergedBundleName: function() {
-        return project.mergedBundle;
-    },
-
-    buildMergedBundle: function() {
-        if (this.getLevelPath() === project.bundles ) return true;
-
-        return false;
-    }
 });
