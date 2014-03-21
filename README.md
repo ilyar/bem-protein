@@ -203,7 +203,6 @@ __loader__
 
 __percentage___
 
--------------------------------------------------------------------------
 
 > **it's important:**
 > - all blocks must be include padding, margin, position
