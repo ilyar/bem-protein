@@ -12,7 +12,7 @@ module.exports = function (grunt) {
     var project = grunt.file.readJSON("project.json") || grunt.fatal("project.json not found");
 
     // Settings for files watcher
-    var build_techs = [ "bemhtml", "css", "js" ],
+    var build_techs = [ "bemhtml", "sass", "js" ],
         // Paths for watch
         watch_paths = function() {
             return build_techs.map(function(tech) {
@@ -24,7 +24,8 @@ module.exports = function (grunt) {
     var tasks = {
 
         project: project,
-        bundle: "index",
+        bundles: project.bundles,
+        current: "index",
 
         watch: {
             blocks: {
@@ -36,48 +37,29 @@ module.exports = function (grunt) {
             }
         },
 
-        // Build bundles for pages with BEM methodology (bem-tools)
         bem: {
-            bundles: {
-                command: "make",
-                TARGETS: project.bundles
+            // build bundles
+            build: {
+                verbosity: "error",
+                command: "make"
             },
-            // Use for clean .bem/cache
+            // clean .bem/cache
             clean: {
                 command: "make",
-                method: "clean",
-                TARGETS: project.bundles
+                method: "clean"
             }
         },
 
-        copy: {
-            // Copy html pages to distribution folder
-            bundles: {
-                files: [{
-                    expand: true,
-                    flatten: true,
-                    filter: "isFile",
-                    dest: project.dist,
-                    src: "<%= project.bundles %>/**/*.html"
-                }]
-            },
-            // Copy assets (fonts, images, favicon, robots.txt and etc)
-            assets: {
-                files: [{
-                    expand: true,
-                    dot: true,
-                    cwd: project.assets,
-                    src: "**",
-                    dest: project.dist
-                }]
-            },
-            // Copy merged javascript
-            js: {
-                files: [{
-                    flatten: true,
-                    dest: project.scripts,
-                    src: "<%= project.bundles %>/<%= bundle %>/_<%= bundle %>.js"
-                }]
+        sass: {
+            build: {
+                options: {
+                    style: 'expanded',
+                    sourcemap: true
+                },
+                files: {
+                    "<%= bundles %>/<%= current %>/_<%= current %>.css":
+                    "<%= bundles %>/<%= current %>/<%= current %>.sass"
+                }
             }
         },
 
@@ -85,20 +67,20 @@ module.exports = function (grunt) {
             options: {
                 browsers: ['last 2 version']
             },
-            css: {
-                src: "<%= project.bundles %>/<%= bundle %>/_<%= bundle %>.css",
-                dest: "<%= project.styles %>"
+            update: {
+                src: "<%= bundles %>/<%= current %>/_<%= current %>.css",
+                dest: "<%= bundles %>/<%= current %>/_<%= current %>.css"
             }
         },
 
         csscomb: {
-            dist: {
+            reorder: {
                 options: {
                     config: '.csscomb.json'
                 },
                 files: {
-                    "<%= project.styles %>":
-                    "<%= project.styles %>"
+                    "<%= bundles %>/<%= current %>/_<%= current %>.css":
+                    "<%= bundles %>/<%= current %>/_<%= current %>.css"
                 }
             }
         }
@@ -106,7 +88,7 @@ module.exports = function (grunt) {
 
     grunt.initConfig(tasks);
 
-    grunt.registerTask("serve", function(){
+    grunt.registerTask("supervisor", function(){
 
         grunt.task.run([
             "watch"
@@ -115,14 +97,15 @@ module.exports = function (grunt) {
     });
 
     grunt.registerTask("default", [
-        "bem:bundles",
-        "copy",
-        "autoprefixer:css"
+        "bem:build",
+        "sass:build"
     ]);
 
     grunt.registerTask("dist", [
+        "bem:clean",
         "default",
-        "csscomb:dist"
+        "autoprefixer",
+        "csscomb"
     ]);
 };
 

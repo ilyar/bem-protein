@@ -15,38 +15,12 @@ exports.getTechs = function() {
         'bemjson.js'         : join(BEM_TECHS, 'bemjson.js'),
         'bemdecl.js'         : 'v2/bemdecl.js',
         'deps.js'            : 'v2/deps.js',
-
         'js'                 : 'v2/js-i.js',
-
         'sass'               : 'sass.js',
-
         'bemhtml'            : join(BEMCORE_TECHS, 'bemhtml.js'),
         'html'               : join(BEMCORE_TECHS, 'html.js')
     };
 
 };
 
-
-// Create bundles in bemjson.js tech
 exports.defaultTechs = ['bemjson.js'];
-
-// Blocks inheritance
-exports.getConfig = function() {
-
-    return BEM.util.extend(this.__base() || {}, {
-        bundleBuildLevels: this.resolvePaths(
-            [
-                'bem-core/common.blocks'
-//                'bem-core/desktop.blocks',
-//                'bem-components/common.blocks'
-//                'bem-components/desktop.blocks'
-            ]
-            .map(function(path) { return PATH.resolve(environ.LIB_ROOT, path); })
-            .concat([
-                'base',
-                'typo'
-            ]
-            .map(function(path) { return PATH.resolve(BLOCKS_PATH, path); })))
-    });
-
-};

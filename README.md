@@ -205,7 +205,7 @@ __percentage___
 
 
 > **it's important:**
-> - all blocks must be include padding, margin, position
+> - all blocks must be include padding, margin, position, comments on jsdoc and docs on markdown
 > - optional: top, left, right, bottom, float
 > - all before this by depend on variables block
 > - blocks can't affect each other

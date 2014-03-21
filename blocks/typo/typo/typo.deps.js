@@ -1,6 +1,6 @@
 ({
     mustDeps: [],
     shouldDeps: [
-        {block: "typo"}
+        {block: "print"}
     ]
 })

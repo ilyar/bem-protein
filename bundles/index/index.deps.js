@@ -76,6 +76,9 @@ exports.deps = [
         "elem": "js"
     },
     {
+        "block": "typo"
+    },
+    {
         "block": "print"
     },
     {

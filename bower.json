@@ -1,5 +1,19 @@
 {
-    "name": "bem-protein",
-    "version": "0.0.1",
-    "devDependencies": {}
+  "name": "bem-protein",
+  "version": "0.0.1",
+  "description": "BEM Prototype Library",
+  "bugs": "https://github.com/verybigman/bem-protein/issues",
+  "ignore": [
+      ".bem/cache",
+      "node_modules",
+      "libs"
+  ],
+  "dependencies": {
+      "bem-core": "git://github.com/bem/bem-core.git#v2"
+  },
+  "devDependencies": {
+      "bem-techs": "git://github.com/verybigman/bem-techs.git",
+      "bem-pr": "git://github.com/narqo/bem-pr.git#~0.6.2"
+  },
+  "private": true
 }
