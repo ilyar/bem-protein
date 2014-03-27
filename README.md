@@ -48,9 +48,14 @@ __line__:
 - elements: col-\* from 1 to 12;
 - disable-on: desktop, tablet, mobile; like xs, md and lg in Twitter Bootstrap >= 3
 
-__content-container__:
+__content__:
 
 - fix content width in page;
+
+__mantle__:
+
+- available-on: desktop, tablet, mobile;
+- disable-on: desktop, tablet, mobile;
 
 ### Forms
 
@@ -147,17 +152,6 @@ __alert__:
 
 - types: info, warning, error, success;
 
-### Panels
-
-__panel__:
-
-- sizes: small, default, large;
-- can be has elements: title;
-
-__plate__:
-
-- sizes: small, default, large;
-
 ### Navigation
 
 __nav__:
@@ -178,6 +172,16 @@ __device__:
 
 - view: imac, macbook, ipad, iphone;
 
+__panel__:
+
+- sizes: small, default, large;
+- can be has elements: title;
+
+__plate__:
+
+- sizes: small, default, large;
+
+
 ### JS
 
 Blocks without visual realisation.
@@ -187,13 +191,6 @@ __collapse__:
 - params: trigger, target;
 
 __localStorage__
-
-### Responsive helpers
-
-__mantle__:
-
-- available-on: desktop, tablet, mobile;
-- disable-on: desktop, tablet, mobile;
 
 ### Tables
 

@@ -1,17 +1,19 @@
-var PATH = require('path'),
-    project = require('../../project.json'),
-    environ = require('bem-environ')({ libDir: project.libDir }),
-    join = PATH.join,
+var pkg     = require('../../package.json')._settings,
+    environ = require('bem-environ'),
+    join    = require('path').join,
 
-    BEM_TECHS = environ.getLibPath('bem-techs', '.bem/techs');
+    PRJ_ROOT    = environ.PRJ_ROOT,
+    LIBS_PATH   = join(PRJ_ROOT, pkg.libs),
+    TECHS_PATH  = join('.bem', 'techs'),
+    BEM_TECHS   = join(LIBS_PATH, 'bem-techs', TECHS_PATH);
 
 exports.getTechs = function() {
 
     return {
-        'bemhtml'       : join(BEM_TECHS, 'bemhtml.js'),
-        'js'            : 'v2/js-i',
-        'sass'          : join(BEM_TECHS, 'sass'),
-        'md'            : join(BEM_TECHS, 'md')
+        'bemhtml' : join(BEM_TECHS, 'bemhtml.js'),
+        'js'      : 'v2/js-i',
+        'sass'    : join(BEM_TECHS, 'sass'),
+        'md'      : join(BEM_TECHS, 'md')
     };
 
 };

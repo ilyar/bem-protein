@@ -1,19 +1,22 @@
-/* jshint node:true */
-/* global MAKE */
+var pkg     = require('../package.json')['_settings'],
+    environ = require('bem-environ')({ libDir: pkg.libs }),
+    path    = require('path'),
+    join    = path.join,
 
-var project = require('../project.json'),
-    environ = require('bem-environ')({ libDir: project.libDir }),
-    path = require('path'),
-    join = path.join,
-    blocksPath = join(environ.PRJ_ROOT, 'blocks');
+    PRJ_ROOT     = environ.PRJ_ROOT,
+    LIBS_PATH    = join(PRJ_ROOT, pkg.libs),
+    BLOCKS_PATH  = join(PRJ_ROOT, pkg.root, pkg.blocks),
+    BUNDLES_PATH = join(pkg.root, pkg.bundles);
 
 environ.extendMake(MAKE);
 
-process.env.YENV = project.env;
-
 MAKE.decl('Arch', {
 
-    bundlesLevelsRegexp: project.bundles
+    getBundlesLevels: function() {
+        return [
+            BUNDLES_PATH
+        ];
+    }
 
 });
 
@@ -41,12 +44,22 @@ MAKE.decl('BundleNode', {
         return [
             'bem-core/common.blocks'
         ]
-        .map(function(level) { return path.resolve(environ.LIB_ROOT, level); })
+        .map(function(level) { return path.resolve(LIBS_PATH, level); })
         .concat([
             'base',
-            'typo'
+            'typo',
+            'grid',
+            'buttons',
+            'forms',
+            'navigation',
+            'lists',
+            'tables',
+            'wrappers',
+            'windows',
+            'progress',
+            'js'
         ]
-        .map(function(level) { return path.resolve(blocksPath, level); }));
+        .map(function(level) { return path.resolve(BLOCKS_PATH, level); }));
     },
 
     'create-browser.js+bemhtml-optimizer-node': function(tech, sourceNode, bundleNode) {
