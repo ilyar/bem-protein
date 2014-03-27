@@ -1,4 +1,4 @@
-var pkg     = require('../package.json')['_settings'],
+var pkg     = require('../package.json')._settings,
     environ = require('bem-environ')({ libDir: pkg.libs }),
     path    = require('path'),
     join    = path.join,
