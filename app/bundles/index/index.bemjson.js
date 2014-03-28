@@ -1,7 +1,7 @@
 ({
     block: 'page',
     title: 'Protein library',
-    favicon: '../../www/favicon.ico',
+    favicon: '../../favicon.ico',
     head: [{ elem: 'meta', attrs: { name: 'description', content: '' }}],
     styles: [{ elem: 'css', url: '_index.css', ie: false }],
     content:[
@@ -17,7 +17,19 @@
             tag: 'main',
             attrs: { role: 'main' },
             content: [
-
+                {
+                    block: 'line',
+                    content: [
+                        {
+                            elem: 'col',
+                            mods: {size: 'large', width: 2}
+                        },
+                        {
+                            elem: 'col',
+                            mods: {size: 'large', width: 10}
+                        }
+                    ]
+                }
             ]
         },
         {

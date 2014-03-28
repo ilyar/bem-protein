@@ -30,14 +30,14 @@ MAKE.decl('BundleNode', {
             'deps.js',
             'bemhtml',
             'js',
-            'sass',
+            'scss',
             'html'
         ];
 
     },
 
     getForkedTechs : function() {
-        return this.__base().concat(['js', 'sass']);
+        return this.__base().concat(['js', 'scss']);
     },
 
     getLevels : function() {
@@ -68,11 +68,10 @@ MAKE.decl('BundleNode', {
         }, this);
     },
 
-    'create-css-node' : function(tech, bundleNode, magicNode) {
-        var source = this.getBundlePath('sass');
-        if(this.ctx.arch.hasNode(source)) {
-            return this.createAutoprefixerNode(tech, this.ctx.arch.getNode(source), bundleNode, magicNode);
-        }
+    'create-scss-optimizer-node' :  function(tech, sourceNode, bundleNode) {
+        sourceNode.getFiles().forEach(function(f) {
+            this['create-css-optimizer-node'](tech, this.ctx.arch.getNode(f), bundleNode);
+        }, this);
     }
 
 });
