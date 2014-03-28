@@ -5,7 +5,7 @@
     mustDeps: [],
     shouldDeps: [
         {block: 'base'},
-        {block: 'grid'},
-        {block: 'typo'}
+        {block: 'typo'},
+        {block: 'grid'}
     ]
 })

@@ -7,56 +7,6 @@ Contain blocks with base styles, desktop and touch versions. This is the first l
 This is all blocks for projects creating. Every block can be build with technologies: bemhtml, css, js, mvc.js, deps.js.
 And must be build with markdown for documentation and include level example.bundles for construct guideline.
 
-### Base
-
-__variables__:
-
-- see base.blocks level for example;
-
-__page__:
-
-- html>head+body;
-
-__intro__:
-
-- for example see jumbotron in Twitter Bootstrap >= 3
-
-__link__:
-
-- sizes: small, default, large;
-- states: default, hover, visited;
-- types: default, pseudo;
-
-__HTML5__:
-
-- article;
-- section;
-- figure;
-- video;
-- header;
-- footer;
-- main;
-- address;
-- author;
-- aside;
-
-
-### Grid
-
-__line__:
-
-- elements: col-\* from 1 to 12;
-- disable-on: desktop, tablet, mobile; like xs, md and lg in Twitter Bootstrap >= 3
-
-__content__:
-
-- fix content width in page;
-
-__mantle__:
-
-- available-on: desktop, tablet, mobile;
-- disable-on: desktop, tablet, mobile;
-
 ### Forms
 
 __label__:

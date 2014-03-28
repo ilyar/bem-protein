@@ -1,31 +1,5 @@
-// Foundation by ZURB and Anton Winogradov
-// foundation.zurb.com
-// Licensed under MIT Open Source
-
-$include-html-global-classes: false;
 //
-// @variables
-//
-$include-html-grid-classes: true;
-$include-xl-html-grid-classes: false !default;
-
-$row-width: rem-calc(1000) !default;
-$column-gutter: rem-calc(30) !default;
-$total-columns: 12 !default;
-
-//
-// Grid Functions
-//
-
-// @FUNCTION
-// $colNumber - Found in settings file
-// $totalColumns - Found in settings file
-@function grid-calc($colNumber, $totalColumns) {
-    @return percentage(($colNumber / $totalColumns));
-}
-
-//
-// @mixins
+// Line Functions
 //
 
 // For creating container, nested, and collapsed rows.
@@ -44,28 +18,28 @@ $total-columns: 12 !default;
         max-width: none;
     }
 
-        // use @include grid-row(collapse); to collapsed a container row margins
+    // use @include grid-row(collapse); to collapsed a container row margins
     @else if $behavior == collapse {
         width: 100%;
         margin: 0;
-        max-width: $row-width;
+        max-width: $line-width;
     }
 
-        // use @include grid-row(nest-collapse); to collapse outer margins on a nested row
+    // use @include grid-row(nest-collapse); to collapse outer margins on a nested row
     @else if $behavior == nest-collapse {
         width: auto;
         margin: 0;
         max-width: none;
     }
 
-        // use @include grid-row; to use a container row
+    // use @include grid-row; to use a container row
     @else {
         width: 100%;
         margin-#{$default-float}: auto;
         margin-#{$opposite-direction}: auto;
         margin-top: 0;
         margin-bottom: 0;
-        max-width: $row-width;
+        max-width: $line-width;
     }
 
     // Clearfix for all rows
@@ -105,8 +79,8 @@ $position:false) {
         padding-right: 0;
     }
 
-        // Gutter padding whenever a column isn't set to collapse
-        // (use $collapse:null to do nothing)
+    // Gutter padding whenever a column isn't set to collapse
+    // (use $collapse:null to do nothing)
     @else if $collapse == false {
         padding-left: $column-gutter / 2;
         padding-right: $column-gutter / 2;
@@ -195,6 +169,7 @@ $position:false) {
     @if $include-html-grid-classes {
         .line {
             @include grid-row;
+            min-height: 10px;
 
             &_collapsed {
                 > .line__col { @include grid-column($collapse:true, $float:false); }
