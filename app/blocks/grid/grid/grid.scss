@@ -1,24 +1,24 @@
 $experimental: true !default;
 
 // We use this to add box-sizing across browser prefixes
-@mixin box-sizing($type:border-box) {
-    @if $experimental {
-        -moz-box-sizing:    $type;
-        -webkit-box-sizing: $type;
-    }
-    box-sizing: $type;
-}
+//@mixin box-sizing($type:border-box) {
+//    @if $experimental {
+//        -moz-box-sizing:    $type;
+//        -webkit-box-sizing: $type;
+//    }
+//    box-sizing: $type;
+//}
 
-body {
-    padding:    0;
-    margin:     0;
-}
+//body {
+//    padding:    0;
+//    margin:     0;
+//}
 // Set box-sizing globally to handle padding and border widths
-*,
-*:before,
-*:after {
-    @include box-sizing(border-box);
-}
+//*,
+//*:before,
+//*:after {
+//    @include box-sizing(border-box);
+//}
 
 $rem-base: 16px !default;
 
@@ -56,7 +56,6 @@ $medium-range: (40.063em, 64em) !default;
 $large-range: (64.063em, 90em) !default;
 $xlarge-range: (90.063em, 120em) !default;
 $xxlarge-range: (120.063em, 99999999em) !default;
-
 
 $screen: "only screen" !default;
 
