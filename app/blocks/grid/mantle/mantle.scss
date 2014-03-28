@@ -1,0 +1,22 @@
+@mixin mantle-class($size) {
+
+}
+
+
+@include exports("grid") {
+
+    .mantle {
+
+        @media #{$small-up} {
+            @include mantle-class($size:s);
+        }
+        @media #{$medium-up} {
+            @include mantle-class($size:m);
+        }
+        @media #{$large-up} {
+            @include mantle-class($size:l);
+        }
+
+    }
+
+}

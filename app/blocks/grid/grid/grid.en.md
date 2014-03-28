@@ -1,11 +1,10 @@
 ### Grid level
 
-__line__:
+[+]__line__:
 
-- elements: col_\* from 1 to 12;
-- disable-on: desktop, tablet, mobile;
+- elements: col_\* from 1 to 12 with widths on different devices;
 
-__mantle__:
+[-]__mantle__:
 
-- available-on: desktop, tablet, mobile;
-- disable-on: desktop, tablet, mobile;
+- dress: l, m, s;
+- undress: l, m, s;

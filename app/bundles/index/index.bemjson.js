@@ -22,11 +22,11 @@
                     content: [
                         {
                             elem: 'col',
-                            mods: {size: 'small', width: 2}
+                            mods: {'dlw': 2}
                         },
                         {
                             elem: 'col',
-                            mods: {size: 'small', width: 10}
+                            mods: {'dlw': 10}
                         }
                     ]
                 }
