@@ -1,20 +1,21 @@
 ### Base level
 
-__variables__
+[+]__variables__
 
-__functions__
+[+]__functions__
 
-__page__:
+[+]__page__:
 
 - html>head+body;
+- without i-bem.js
 
-__link__:
+[?]__link__:
 
 - sizes: small, default, large;
 - states: default, hover, visited;
 - types: default, pseudo;
 
-__HTML5__:
+[-]__HTML5__ (regulate this by tag node in bemhtml):
 
 - article;
 - section;
