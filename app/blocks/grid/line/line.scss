@@ -169,14 +169,17 @@ $position:false) {
         .line {
             @include grid-row;
 
-            &_collapsed {
+            .line_collapsed {
                 > .line__col { @include grid-column($collapse:true, $float:false); }
 
                 .line {margin-left:0; margin-right:0;}
             }
 
-            .line { @include grid-row($behavior:nest);
-                &_collapsed { @include grid-row($behavior:nest-collapse); }
+            .line {
+                @include grid-row($behavior:nest);
+                .line_collapsed {
+                    @include grid-row($behavior:nest-collapse);
+                }
             }
         }
 
@@ -194,13 +197,4 @@ $position:false) {
         @media #{$large-up} {
             @include grid-html-classes($size:l);
         }
-
-//    @if $include-xl-html-grid-classes {
-//        @media #{$xlarge-up} {
-//            @include grid-html-classes($size:xlarge);
-//        }
-//        @media #{$xxlarge-up} {
-//            @include grid-html-classes($size:xxlarge);
-//        }
-//    }
 }

@@ -8,6 +8,7 @@ var pkg     = require('../package.json')._settings,
     BLOCKS_PATH  = join(PRJ_ROOT, pkg.root, pkg.blocks),
     BUNDLES_PATH = join(pkg.root, pkg.bundles);
 
+require('bem-tools-autoprefixer').extendMake(MAKE);
 environ.extendMake(MAKE);
 
 MAKE.decl('Arch', {
@@ -37,7 +38,7 @@ MAKE.decl('BundleNode', {
     },
 
     getForkedTechs : function() {
-        return this.__base().concat(['js', 'scss']);
+        return this.__base().concat(['js', 'browser.js+bemhtml', 'scss']);
     },
 
     getLevels : function() {
@@ -75,20 +76,3 @@ MAKE.decl('BundleNode', {
     }
 
 });
-
-// TODO: Fix this. See bem-components/.bem/make.js
-//require('bem-tools-autoprefixer').extendMake(MAKE);
-//MAKE.decl('AutoprefixerNode', {
-//
-//    getBrowsers : function() {
-//
-//        return [
-//            'last 2 versions',
-//            'ie 10',
-//            'ff 24',
-//            'opera 12.16'
-//        ];
-//
-//    }
-//
-//});
