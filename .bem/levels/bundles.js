@@ -16,7 +16,7 @@ exports.getTechs = function() {
         'bemdecl.js' : 'v2/bemdecl.js',
         'deps.js'    : 'v2/deps.js',
         'js'         : 'v2/js-i.js',
-        'scss'       : join(PRJ_TECHS, 'scss'),
+        'scss'       : join(BEM_TECHS, 'scss.js'),
         'bemhtml'    : join(BEMCORE_TECHS, 'bemhtml.js'),
         'html'       : join(BEMCORE_TECHS, 'html.js')
     };
