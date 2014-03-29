@@ -18,9 +18,8 @@
     "root": "app",
     "blocks": "blocks",
     "bundles": "bundles",
-    "favicon": "favicon.ico",
-    "styles": "styles/styles.min.css",
-    "scripts": "scripts/scripts.min.js",
+    "styles": "here will be dist styles destination for Gulp",
+    "scripts": "here will be dist scripts destination for Gulp",
     "libs": "bower_components"
   },
   "dependencies": {},
@@ -34,9 +33,9 @@
     "bower-npm-install": "~0.5.2",
     "bem-cli": "~1.0.1",
     "gulp": "~3.6.0",
-    "gulp-autoprefixer": "0.0.6",
-    "gulp-ruby-sass": "~0.4.1",
-    "gulp-if": "0.0.5"
+    "gulp-if": "0.0.5",
+    "node-sass": "~0.8.4",
+    "bem-tools-autoprefixer": "0.0.2"
   },
   "engines": {
     "node": ">=0.8.0"

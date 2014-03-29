@@ -3,9 +3,7 @@
 var template = require('bem/lib/template'),
     sass = require('node-sass');
 
-exports.baseTechPath = 'bem/lib/techs/v2/css';
-
-exports.API_VER = 2;
+exports.baseTechPath = 'bem/lib/techs/v2/css-preprocessor';
 
 exports.techMixin = {
 
@@ -30,6 +28,25 @@ exports.techMixin = {
 
     getBuildResultChunk: function(relPath, path, suffix) {
         return '@import "' + relPath + '";\n';
-    }
+    },
 
-}
+    getBuildSuffixesMap: function() {
+        return {
+            css: ['scss', 'css']
+        };
+    },
+
+    compileBuildResult: function(res, defer) {
+
+        sass.render({
+            data: res,
+            success: function(css) {
+                return defer.resolve([css]);
+            },
+            error: function(err) {
+                return defer.reject(err);
+            }
+        });
+
+    }
+};

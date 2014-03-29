@@ -3,7 +3,7 @@
     title: 'Protein library',
     favicon: '../../favicon.ico',
     head: [{ elem: 'meta', attrs: { name: 'description', content: '' }}],
-    styles: [{ elem: 'css', url: '_index.css', ie: false }],
+    styles: [{ elem: 'css', url: '_index.prefix.css', ie: false }],
     content:[
         {
             elem: 'header',

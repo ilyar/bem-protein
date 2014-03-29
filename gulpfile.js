@@ -1,26 +1,17 @@
-// TODO: Plans - jshint, csslint, imagemin, svgmin, uglify, csso
+// Task for build distribution package
+
+// TODO: Plans - jshint, csslint, imagemin, svgmin
 
 var pkg  = require('./package.json')._settings,
     bem  = require('bem'),
     gulp = require('gulp'),
     gif  = require('gulp-if'),
-    sass = require('gulp-sass'),
-    pref = require('gulp-autoprefixer'),
     path = require('path'),
-    join = path.join;
+    join = path.join,
 
-var BUNDLE       = 'index',
+    BUNDLE       = 'index',
     BUNDLES_PATH = join(pkg.root, pkg.bundles),
     BUNDLE_DIR   = join(BUNDLES_PATH, BUNDLE),
-    BUNDLE_SASS  = join(BUNDLE_DIR, BUNDLE + '.scss');
+    BUNDLE_CSS   = join(BUNDLE_DIR, '_' + BUNDLE + '.prefix.css');
 
-gulp.task('sass', function () {
-    return gulp.src(BUNDLE_SASS)
-        .pipe(sass({
-            sourceComments: 'map'
-        }))
-        .pipe(pref('last 2 version'))
-        .pipe(gulp.dest(BUNDLE_DIR));
-});
-
-gulp.task('default', ['sass']);
+gulp.task('default', []);
