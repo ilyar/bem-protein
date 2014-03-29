@@ -6,7 +6,6 @@
   },
   "devDependencies": {
     "bem-techs": "git://github.com/verybigman/bem-techs.git",
-    "bem-pr": "git://github.com/narqo/bem-pr.git#~0.6.2",
-    "foundation": "~5.2.1"
+    "bem-pr": "git://github.com/narqo/bem-pr.git#~0.6.2"
   }
 }
