@@ -20,4 +20,4 @@ exports.getTechs = function() {
 
 };
 
-exports.defaultTechs = ['scss', 'js', 'bemhtml', 'md'];
+exports.defaultTechs = ['scss', 'bemhtml', 'md'];
