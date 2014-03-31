@@ -1,13 +1,13 @@
 var pkg     = require('../../package.json')._settings,
-    environ = require('bem-environ'),
     join    = require('path').join,
+    environ = require('bem-environ'),
 
-    PRJ_ROOT        = environ.PRJ_ROOT,
-    LIBS_PATH       = join(PRJ_ROOT, pkg.libs),
-    TECHS_PATH      = join('.bem', 'techs'),
-    PRJ_TECHS       = join(PRJ_ROOT, TECHS_PATH),
-    BEMCORE_TECHS   = join(LIBS_PATH, 'bem-core', TECHS_PATH),
-    BEM_TECHS       = join(LIBS_PATH, 'bem-techs', TECHS_PATH);
+    PRJ_ROOT      = environ.PRJ_ROOT,
+    LIBS_PATH     = join(PRJ_ROOT, pkg.libs),
+    TECHS_PATH    = join('.bem', 'techs'),
+    PRJ_TECHS     = join(PRJ_ROOT, TECHS_PATH),
+    BEM_TECHS     = join(LIBS_PATH, 'bem-techs', TECHS_PATH),
+    BEMCORE_TECHS = join(LIBS_PATH, 'bem-core', TECHS_PATH);
 
 exports.getTechs = function() {
 

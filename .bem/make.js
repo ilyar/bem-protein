@@ -1,7 +1,7 @@
 var pkg     = require('../package.json')._settings,
-    environ = require('bem-environ')({ libDir: pkg.libs }),
     path    = require('path'),
     join    = path.join,
+    environ = require('bem-environ')({ libDir: pkg.libs }),
 
     PRJ_ROOT     = environ.PRJ_ROOT,
     LIBS_PATH    = join(PRJ_ROOT, pkg.libs),

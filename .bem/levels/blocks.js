@@ -1,6 +1,6 @@
 var pkg     = require('../../package.json')._settings,
-    environ = require('bem-environ'),
     join    = require('path').join,
+    environ = require('bem-environ'),
 
     PRJ_ROOT    = environ.PRJ_ROOT,
     LIBS_PATH   = join(PRJ_ROOT, pkg.libs),
@@ -12,10 +12,10 @@ exports.getTechs = function() {
 
     return {
         'bemhtml' : join(BEM_TECHS, 'bemhtml.js'),
-        'js'      : 'v2/js-i',
+        'js'      : 'v2/js-i.js',
         'deps.js' : 'v2/deps.js',
-        'scss'    : join(PRJ_TECHS, 'scss'),
-        'md'      : join(BEM_TECHS, 'md')
+        'scss'    : join(BEM_TECHS, 'scss.js'),
+        'md'      : join(BEM_TECHS, 'md.js')
     };
 
 };
