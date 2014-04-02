@@ -1,0 +1,10 @@
+block('form')(
+    tag()('form'),
+    attrs()(function() {
+        return {
+            role:'form',
+            action: this.ctx.action,
+            name: this.ctx.name
+        }
+    })
+)
