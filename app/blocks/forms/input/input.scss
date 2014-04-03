@@ -63,6 +63,7 @@ $select-hover-bg-color: #fff !default;
     background-repeat: no-repeat;
     background-position: 97% center;
     border: $input-border-width $input-border-style $input-border-color;
+    height: ($input-font-size + 24px);
     padding-left: 12px;
     padding-right: 12px;
     font-size: $input-font-size;
@@ -75,10 +76,6 @@ $select-hover-bg-color: #fff !default;
 
 .input_type_select .input__control::-ms-expand {
     display:none;
-}
-
-.input_type_select .input__control {
-    height: ($input-font-size + (5px * 1.5));
 }
 
 .input_type_text,
