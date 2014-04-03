@@ -63,7 +63,7 @@ $select-hover-bg-color: #fff !default;
     background-repeat: no-repeat;
     background-position: 97% center;
     border: $input-border-width $input-border-style $input-border-color;
-    padding: 20px / 2;
+    padding: 12px;
     font-size: $input-font-size;
 
     &:hover {
@@ -110,7 +110,7 @@ $select-hover-bg-color: #fff !default;
 .input_type_select {
 
     .input__control {
-        margin: 0 0 10px 0;
+        margin: 0 0 15px 0;
     }
 
 }
@@ -118,7 +118,6 @@ $select-hover-bg-color: #fff !default;
 .input_type_checkbox .input__container + .input__label,
 .input_type_radio .input__container + .input__label {
     display: inline-block;
-    margin-left: 5px * .5;
     margin-right: 5px;
     margin-bottom: 0;
     vertical-align: baseline;
