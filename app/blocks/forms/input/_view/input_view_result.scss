@@ -7,13 +7,19 @@
         width: 50%;
     }
 
+    .input__container {
+        text-align: right;
+    }
+
     .input__control, .input__control:focus {
+        display: inline-block;
         background: transparent;
         border: 0;
         box-shadow: none;
         margin-bottom: 0;
         height: 20px;
         text-align: right;
+        width: 75%;
     }
 
 }
