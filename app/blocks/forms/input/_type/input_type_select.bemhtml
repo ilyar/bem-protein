@@ -1,0 +1,22 @@
+block('input').mod('type', 'select')(
+    content()(function() {
+        var options = this.ctx.options.map(function(item) {
+            return {
+                block: 'input',
+                elem: 'select_option',
+                attrs: {},
+                tag: 'option',
+                content: item
+            }
+        });
+
+        options[0].attrs.selected = 'selected';
+
+        var ctx = this.ctx, content = [{ elem: 'control', tag: 'select', content: options }];
+        ctx.label && content.unshift({ elem: 'label', content: ctx.label });
+        return content;
+    },
+    match(function() { return typeof this.ctx.content !== 'undefined' })(function() {
+        return this.ctx.content;
+    }))
+)
