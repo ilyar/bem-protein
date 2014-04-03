@@ -1,0 +1,19 @@
+.input_type_text.input_view_result {
+    margin-bottom: 15px;
+
+    .input__label, .input__container {
+        display: inline-block;
+        vertical-align: top;
+        width: 50%;
+    }
+
+    .input__control, .input__control:focus {
+        background: transparent;
+        border: 0;
+        box-shadow: none;
+        margin-bottom: 0;
+        height: 20px;
+        text-align: right;
+    }
+
+}

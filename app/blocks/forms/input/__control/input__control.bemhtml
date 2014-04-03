@@ -35,6 +35,12 @@ block('input').elem('control')(
             content: this._input.help
         });
 
+        this._input.postfix && container.content.push({
+            block: 'input',
+            elem: 'postfix',
+            content: this._input.postfix
+        });
+
         applyCtx({ '_input__control': true }, container)
     })
 
