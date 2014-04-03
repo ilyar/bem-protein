@@ -1,7 +1,10 @@
 [{
     shouldDeps : [
         {
-            elems : ['container', 'label',  'control']
+            elems : ['container', 'label', 'control', 'help']
+        },
+        {
+            block : 'link'
         }
     ]
 },

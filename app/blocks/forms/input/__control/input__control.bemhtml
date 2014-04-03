@@ -20,11 +20,25 @@ block('input').elem('control')(
     }),
 
     def().match(function() { return !this._input__control })(function() {
+
+        var help = {};
+
+        if (this._input.help) {
+            help = {
+                block: 'input',
+                elem: 'help',
+                content: this._input.help
+            }
+        }
+
         applyCtx(
             { '_input__control': true },
             {
                 elem: 'container',
-                content: this.ctx
+                content: [
+                    this.ctx,
+                    help
+                ]
             })
     })
 
