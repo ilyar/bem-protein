@@ -62,9 +62,9 @@ $select-hover-bg-color: #fff !default;
     background-image: url('data:image/svg+xml;base64, PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI2cHgiIGhlaWdodD0iM3B4IiB2aWV3Qm94PSIwIDAgNiAzIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA2IDMiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwb2x5Z29uIHBvaW50cz0iNS45OTIsMCAyLjk5MiwzIC0wLjAwOCwwICIvPjwvc3ZnPg==');
     background-repeat: no-repeat;
     background-position: 97% center;
-    height: ($input-font-size + 24px);
     border: $input-border-width $input-border-style $input-border-color;
-    padding: 12px;
+    padding-left: 12px;
+    padding-right: 12px;
     font-size: $input-font-size;
 
     &:hover {
