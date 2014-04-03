@@ -12,7 +12,8 @@ block('input').elem('control')(
                 value: input.val,
                 maxlength: input.maxLength,
                 tabindex: input.tabIndex,
-                placeholder: input.placeholder
+                placeholder: input.placeholder,
+                readonly: input.readonly
             };
 
         input.autocomplete === false && (attrs.autocomplete = 'off');
