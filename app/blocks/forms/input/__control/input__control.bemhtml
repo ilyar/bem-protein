@@ -1,7 +1,7 @@
 block('input').elem('control')(
 
     tag()(function() {
-        return 'input' || this.ctx.tag
+        return this.ctx.tag || 'input'
     }),
 
     attrs()(function() {
