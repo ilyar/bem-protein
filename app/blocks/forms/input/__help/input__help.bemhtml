@@ -1,11 +1,18 @@
 block('input').elem('help')(
     tag()('span'),
     content()(function() {
-        return {
-            block: 'link',
-            mods: {toggle: 'help'},
-            href: '#',
-            content: '?'
-        };
+        return [
+            {
+                block: 'link',
+                mods: {toggle: 'help'},
+                href: '#',
+                content: '?'
+            },
+            {
+                block: 'input',
+                elem: 'help-content',
+                content: this.ctx.content
+            }
+        ];
     })
 )

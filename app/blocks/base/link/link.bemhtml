@@ -28,6 +28,7 @@ block('link')(
         if (this.ctx.content) {
             return {
                 elem    : 'inner',
+                tag     : 'span',
                 content : this.ctx.content
             }
         }
