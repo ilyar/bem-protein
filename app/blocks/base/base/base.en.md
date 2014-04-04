@@ -13,13 +13,13 @@
 - html>head+body;
 - without i-bem.js
 
-[?]__link__:
+[+]__link__:
 
 - sizes: small, default, large;
 - states: default, hover, visited;
 - types: default, pseudo;
 
-[-]__HTML5__ (regulate this by tag node in bemhtml):
+__HTML5__ (regulated by tag node in bemhtml):
 
 - article;
 - section;

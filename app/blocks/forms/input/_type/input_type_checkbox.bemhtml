@@ -1,0 +1,24 @@
+block('input').mod('type', 'checkbox')(
+    content()(function() {
+        return [
+            {
+                elem: 'label',
+                content: [
+                    {
+                        elem : 'control',
+                        attrs: { type: 'checkbox' },
+                        checked : this.mods.checked,
+                        name : this.ctx.name,
+                        val : this.ctx.val
+                    },
+                    {
+                        elem: 'inner',
+                        tag: 'span',
+                        content: this.ctx.label
+                    }
+
+                ]
+            }
+        ];
+    })
+)
