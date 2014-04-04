@@ -1,0 +1,7 @@
+block('button').mod('disabled', true)(
+    attrs()(function() {
+        var attrs = { disabled: 'disabled' };
+
+        return this._.extend(applyNext(), attrs);
+    })
+)
