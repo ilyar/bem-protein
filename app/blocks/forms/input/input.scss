@@ -68,7 +68,7 @@ $select-hover-bg-color: #fff !default;
     padding-left: 12px;
     padding-right: 12px;
     font-size: $input-font-size;
-    transition: all 0.2s linear;
+    transition: border-color 0.2s linear;
 
     &:hover {
         background-color: $select-hover-bg-color;
