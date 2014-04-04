@@ -1,3 +1,5 @@
 block('button')(
-    
+    tag()(function() {
+        return this.ctx.tag || 'button'
+    })
 )
