@@ -52,6 +52,7 @@ $select-hover-bg-color: #fff !default;
 
     .input__label {
         @include form-label;
+        user-select: none;
     }
 
 }
@@ -125,4 +126,8 @@ $select-hover-bg-color: #fff !default;
 /* Normalize file input width */
 .input_type_file .input__control {
     width:100%;
+}
+
+.input .input__control {
+    outline: none;
 }
