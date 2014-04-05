@@ -1,58 +1,25 @@
 # Prototype library
 
-Contain blocks with base styles, desktop and touch versions. This is the first level for all projects.
+Include blocks with base styles, desktop and touch versions. This library can be the first level for all your projects.
 
 ## Components inside
 
-This is all blocks for projects creating. Every block can be build with technologies: bemhtml, css, js, mvc.js, deps.js.
-And must be build with markdown for documentation and include level example.bundles for construct guideline.
+Every block was build with technologies: bemhtml, css, js, mvc.js, deps.js, md. See examples in source and bundles
+in app/examples directory.
 
-### Lists
+- [base](https://github.com/verybigman/bem-protein/blob/master/app/blocks/base/base/base.en.md)
+- [grid](https://github.com/verybigman/bem-protein/blob/master/app/blocks/grid/grid/grid.en.md)
+- [typo](https://github.com/verybigman/bem-protein/blob/master/app/blocks/typo/typo/typo.en.md)
+- [buttons](https://github.com/verybigman/bem-protein/blob/master/app/blocks/buttons/buttons/buttons.en.md)
+- [forms](https://github.com/verybigman/bem-protein/blob/master/app/blocks/forms/forms/forms.en.md)
+- [windows](https://github.com/verybigman/bem-protein/blob/master/app/blocks/windows/windows/windows.en.md)
+- [wrappers](https://github.com/verybigman/bem-protein/blob/master/app/blocks/wrappers/wrappers/wrappers.en.md)
+- [lists](https://github.com/verybigman/bem-protein/blob/master/app/blocks/lists/lists/lists.en.md)
+- [navigation](https://github.com/verybigman/bem-protein/blob/master/app/blocks/navigation/navigation/navigation.en.md)
+- [tables](https://github.com/verybigman/bem-protein/blob/master/app/blocks/tables/tables/tables.en.md)
+- [progress](https://github.com/verybigman/bem-protein/blob/master/app/blocks/progress/progress/progress.en.md)
+- [js](https://github.com/verybigman/bem-protein/blob/master/app/blocks/js/js/js.en.md)
 
-__list__:
-
-- view: default, inline;
-
-__dropdown__
-
-### Navigation
-
-__nav__:
-
-- view: horizontal, vertical, side;
-
-__social__:
-
-- view: share, likes;
-
-__breadcrumbs__
-
-__pagination__
-
-
-### JS
-
-Blocks without visual realisation.
-
-__collapse__:
-
-- params: trigger, target;
-
-__localStorage__
-
-### Tables
-
-### Progressbars
-
-__loader__
-
-__percentage___
-
-
-> **it's important:**
-> - all blocks must be include padding, margin, position, comments on jsdoc and docs on markdown
-> - optional: top, left, right, bottom, float
-> - all before this by depend on variables block
-> - blocks can't affect each other
+> **NOTE:**
 > - CSS cascade can be only inside block and only for this block elements
-> - mods will be: type, size, view, layout, content, context, theme, without val (example, clear, visible and etc).
+> - mods can have this names: type, size, view, layout, content, context, theme, without val (example, clear, visible and etc).

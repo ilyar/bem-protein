@@ -1,6 +1,6 @@
 ({
     block: 'page',
-    title: 'Base level blocks examples',
+    title: 'Base examples',
     favicon: '../../favicon.ico',
     head: [{ elem: 'meta', attrs: { name: 'description', content: '' }}],
     styles: [{ elem: 'css', url: '_base.prefix.css', ie: false }],

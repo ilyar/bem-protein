@@ -1,6 +1,6 @@
 ({
     block: 'page',
-    title: 'Grid level blocks examples',
+    title: 'Grid examples',
     favicon: '../../favicon.ico',
     head: [{ elem: 'meta', attrs: { name: 'description', content: '' }}],
     styles: [{ elem: 'css', url: '_grid.prefix.css', ie: false }],
