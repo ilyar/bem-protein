@@ -1,0 +1,12 @@
+@mixin fieldset {
+    border:  $fieldset-border-width;
+    padding: $fieldset-padding;
+    margin:  $fieldset-margin;
+
+    .fieldset__legend {
+        font-weight: $legend-font-weight;
+        font-size:   $legend-font-size;
+        padding-top: $legend-padding-top;
+        color:       $legend-font-color;
+    }
+}

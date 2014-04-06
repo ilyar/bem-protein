@@ -1,26 +1,3 @@
-$fieldset-border-width: 1px !default;
-$fieldset-margin: 0 !default;
-
-$legend-font-weight: normal !default;
-$legend-font-size: 20px;
-$legend-padding-top: 30px !default;
-$legend-font-color: #000000;
-
-$fieldset-padding: $legend-font-size 40px 30px !default;
-
-@mixin fieldset {
-    border:  $fieldset-border-width;
-    padding: $fieldset-padding;
-    margin:  $fieldset-margin;
-
-    .fieldset__legend {
-        font-weight: $legend-font-weight;
-        font-size:   $legend-font-size;
-        padding-top: $legend-padding-top;
-        color:       $legend-font-color;
-    }
-}
-
 .fieldset {
     @include fieldset;
 }

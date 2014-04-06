@@ -1,0 +1,11 @@
+// We use these to control text direction settings
+$text-direction: ltr !default;
+$default-float: left !default;
+$opposite-direction: right !default;
+@if $text-direction == ltr {
+    $default-float: left;
+    $opposite-direction: right;
+} @else {
+    $default-float: right;
+    $opposite-direction: left;
+}

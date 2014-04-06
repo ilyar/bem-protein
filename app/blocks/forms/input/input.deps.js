@@ -9,5 +9,8 @@
     ]
 },
 {
-    mustDeps : { tech : 'bemhtml', block : 'input' }
+    mustDeps : [
+        {elems: [ 'variables', 'mixins' ]},
+        { tech : 'bemhtml', block : 'input' }
+    ]
 }]

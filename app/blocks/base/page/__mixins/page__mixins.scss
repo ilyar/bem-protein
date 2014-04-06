@@ -1,0 +1,15 @@
+// We use this to do clear floats
+@mixin clearfix {
+    *zoom:1;
+    &:before, &:after { content: " "; display: table; }
+    &:after { clear: both; }
+}
+
+// We use this to prevent styles from being loaded multiple times for compenents that rely on other components.
+$modules: () !default;
+@mixin exports($name) {
+    @if (index($modules, $name) == false) {
+        $modules: append($modules, $name);
+        @content;
+    }
+}
