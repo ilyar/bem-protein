@@ -12,6 +12,10 @@ var pkg  = require('./package.json')._settings,
     BUNDLE       = 'index',
     BUNDLES_PATH = join(pkg.root, pkg.bundles),
     BUNDLE_DIR   = join(BUNDLES_PATH, BUNDLE),
-    BUNDLE_CSS   = join(BUNDLE_DIR, '_' + BUNDLE + '.prefix.css');
+    BUNDLE_CSS   = join(BUNDLE_DIR, '_' + BUNDLE + '.prefix.css'),
+    COMPONENTS   = [
+                     'base', 'typo', 'grid', 'buttons', 'forms', 'navigation', 'lists',
+                     'tables', 'wrappers', 'windows', 'progress', 'js'
+                   ];
 
 gulp.task('default', []);
