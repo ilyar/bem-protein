@@ -1,6 +1,6 @@
 {
   "name": "bem-protein",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "BEM Prototype Library",
   "private": true,
   "homepage": "https://github.com/verybigman/bem-protein",
@@ -17,7 +17,7 @@
   "_settings": {
     "root": "app",
     "blocks": "blocks",
-    "bundles": "bundles",
+    "bundles": "examples",
     "styles": "here will be dist styles destination for Gulp",
     "scripts": "here will be dist scripts destination for Gulp",
     "libs": "bower_components"

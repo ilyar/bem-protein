@@ -4,8 +4,7 @@
     ],
     mustDeps: [],
     shouldDeps: [
-        {block: 'base'},
-        {block: 'typo'},
-        {block: 'grid'}
+        {elems: [ 'reset', 'mixins', 'functions', 'variables' ]},
+        {block: 'print'}
     ]
 })

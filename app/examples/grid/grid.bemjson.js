@@ -17,7 +17,19 @@
             tag: 'main',
             attrs: { role: 'main' },
             content: [
-
+                {
+                    block: 'line',
+                    content: [
+                        {
+                            elem: 'col',
+                            mods: {'dlw': 2}
+                        },
+                        {
+                            elem: 'col',
+                            mods: {'dlw': 10}
+                        }
+                    ]
+                }
             ]
         },
         {
