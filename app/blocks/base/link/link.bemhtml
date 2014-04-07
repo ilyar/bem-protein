@@ -30,7 +30,7 @@ block('link')(
 
         this.ctx.content && content.push({elem: 'inner', tag: 'span', content: this.ctx.content});
 
-        this.ctx.icon && content.unshift({elem: 'icon', content: this.ctx.icon});
+        this.ctx.icon && content.unshift({elem: 'icon', tag: 'span', content: this.ctx.icon});
 
         return content;
     })
