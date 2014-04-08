@@ -22,7 +22,9 @@ block('input').elem('control')(
         if (this._input.controlAttrs) {
             for (var attrname in attrs) { merged_attrs[attrname] = attrs[attrname]; }
             for (var attrname in obj2) { merged_attrs[attrname] = this._input.controlAttrs[attrname]; }
-            attrs.extend(this._input.controlAttrs);
+        }
+        else {
+            merged_attrs = attrs;
         }
 
         return merged_attrs;
