@@ -14,14 +14,18 @@ block('input').elem('control')(
                 tabindex: input.tabIndex,
                 placeholder: input.placeholder,
                 readonly: input.readonly
-            };
+            }, merged_attrs = {};
 
         input.autocomplete === false && (attrs.autocomplete = 'off');
         this.mods.disabled && (attrs.disabled = 'disabled');
 
-        this._input.controlAttrs && attrs.extend(this._input.controlAttrs);
+        if (this._input.controlAttrs) {
+            for (var attrname in attrs) { merged_attrs[attrname] = attrs[attrname]; }
+            for (var attrname in obj2) { merged_attrs[attrname] = this._input.controlAttrs[attrname]; }
+            attrs.extend(this._input.controlAttrs);
+        }
 
-        return attrs;
+        return merged_attrs;
     }),
 
     def().match(function() { return !this._input__control })(function() {
