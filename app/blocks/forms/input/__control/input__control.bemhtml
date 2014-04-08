@@ -19,6 +19,8 @@ block('input').elem('control')(
         input.autocomplete === false && (attrs.autocomplete = 'off');
         this.mods.disabled && (attrs.disabled = 'disabled');
 
+        this._input.controlAttrs && attrs.extend(this._input.controlAttrs);
+
         return attrs;
     }),
 
