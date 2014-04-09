@@ -13,6 +13,7 @@ block('input').elem('control')(
                 maxlength: input.maxLength,
                 tabindex: input.tabIndex,
                 placeholder: input.placeholder,
+                required: input.required,
                 readonly: input.readonly
             }, merged_attrs = {};
 
