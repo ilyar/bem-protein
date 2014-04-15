@@ -1,7 +1,7 @@
 block('input').elem('help')(
     tag()('span'),
     attrs()(function () {
-        return this._input.help
+        return this._input.help;
     }),
     content()(function() {
         return [
