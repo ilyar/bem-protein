@@ -3,6 +3,9 @@ block('input').elem('help')(
     attrs()(function () {
         return this._input.help;
     }),
+    cls()(function() {
+        return this._input.help.class;
+    }),
     content()(function() {
         return [
             {
