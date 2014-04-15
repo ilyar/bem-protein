@@ -10,11 +10,6 @@ block('input').elem('help')(
                 mods: {toggle: 'help'},
                 href: '#',
                 content: '?'
-            },
-            {
-                block: 'input',
-                elem: 'help-content',
-                content: this.ctx.content
             }
         ];
     })
