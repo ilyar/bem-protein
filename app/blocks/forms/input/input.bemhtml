@@ -8,6 +8,7 @@ block('input')(
         function() {
             var ctx = this.ctx, content = [{ elem: 'control' }];
             ctx.label && content.unshift({ elem: 'label', content: ctx.label });
+            ctx.validation && content.unshift({ elem: 'validation', content: ctx.validation });
             return content;
         },
         match(function() { return typeof this.ctx.content !== 'undefined' })(function() {
