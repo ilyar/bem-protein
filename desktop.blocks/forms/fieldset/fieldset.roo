@@ -1,0 +1,12 @@
+.fieldset {
+    border:  $fieldset_border_width;
+    padding: $fieldset_padding;
+    margin:  $fieldset_margin;
+
+    .fieldset__legend {
+        font-weight: $legend_font_weight;
+        font-size:   $legend_font_size;
+        padding-top: $legend_padding_top;
+        color:       $legend_font_color;
+    }
+}
