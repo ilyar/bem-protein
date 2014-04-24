@@ -1,26 +1,22 @@
-var pkg     = require('../../package.json')._settings,
-    join    = require('path').join,
-    environ = require('bem-environ'),
+var dirs            = require('../../package.json')._directories,
+    path            = require('path'),
+    environ         = require('bem-environ'),
+    getTechResolver = environ.getTechResolver,
 
-    PRJ_ROOT      = environ.PRJ_ROOT,
-    LIBS_PATH     = join(PRJ_ROOT, pkg.libs),
-    TECHS_PATH    = join('.bem', 'techs'),
-    PRJ_TECHS     = join(PRJ_ROOT, TECHS_PATH),
-    BEM_TECHS     = join(LIBS_PATH, 'bem-techs', TECHS_PATH),
-    BEMCORE_TECHS = join(LIBS_PATH, 'bem-core', TECHS_PATH);
+    PRJ_ROOT        = environ.PRJ_ROOT,
+    PRJ_TECHS       = path.resolve(PRJ_ROOT, '.bem/techs'),
+    BEM_TECHS       = environ.getLibPath('bem-techs', '.bem/techs'),
+    BEMCORE_TECHS   = environ.getLibPath('bem-core', '.bem/techs');
+
+exports.baseLevelPath = require.resolve('./blocks');
 
 exports.getTechs = function() {
+    var techs = this.__base();
 
-    return {
-        'bemjson.js' : join(BEM_TECHS, 'bemjson.js'),
-        'bemdecl.js' : 'v2/bemdecl.js',
-        'deps.js'    : 'v2/deps.js',
-        'js'         : 'v2/js-i.js',
-        'scss'       : join(BEM_TECHS, 'scss.js'),
-        'bemhtml'    : join(BEMCORE_TECHS, 'bemhtml.js'),
-        'html'       : join(BEMCORE_TECHS, 'html.js')
-    };
+    // Use techs from lib bem-core
+    ['html'].forEach(getTechResolver(techs, BEMCORE_TECHS));
 
+    return techs;
 };
 
 exports.defaultTechs = ['bemjson.js'];

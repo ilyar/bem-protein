@@ -2,8 +2,7 @@
   "name": "bem-protein",
   "private": true,
   "dependencies": {
-    "bem-core": "git://github.com/bem/bem-core.git#v2",
-    "bem-techs": "git://github.com/verybigman/bem-techs.git",
-    "bem-pr": "git://github.com/narqo/bem-pr.git#~0.6.2"
+    "bem-core": "v2.1.0",
+    "bem-techs": "git://github.com/verybigman/bem-techs.git#v0.0.1"
   }
 }

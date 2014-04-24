@@ -1,106 +1,123 @@
-var pkg     = require('../package.json')._settings,
-    path    = require('path'),
-    join    = path.join,
-    environ = require('bem-environ')({ libDir: pkg.libs }),
-
-    PRJ_ROOT     = environ.PRJ_ROOT,
-    LIBS_PATH    = join(PRJ_ROOT, pkg.libs),
-    BLOCKS_PATH  = join(PRJ_ROOT, pkg.blocks),
-    BUNDLES_PATH = pkg.bundles;
+var dirs = require('../package.json')._directories,
+    path = require('path');
 
 // npm package with tech for autoprefixer
 // more info here: https://github.com/bem/bem-tools-autoprefixer
 require('bem-tools-autoprefixer').extendMake(MAKE);
-environ.extendMake(MAKE);
 
 MAKE.decl('Arch', {
 
-    // this is customized path to bundles
-    // more info here: http://bem.info/tools/bem/bem-tools/customization
-    getBundlesLevels: function() {
-        return [
-            BUNDLES_PATH
-        ];
-    }
+    blocksLevelsRegexp : /^.+?\.blocks/,
+    bundlesLevelsRegexp : /^.+?\.examples$/
 
 });
 
 MAKE.decl('BundleNode', {
 
-    // techs for bundles build
     getTechs: function() {
+
         return [
             'bemjson.js',
             'bemdecl.js',
             'deps.js',
-            'bemhtml',
+            'roole',
+            'css',
             'js',
-            'scss',
-            'prefix.css',
+            'bemhtml',
             'html'
         ];
+
     },
 
-    // techs in parallel processes
     getForkedTechs : function() {
-        return this.__base().concat(['js', 'scss']);
+        return this.__base().concat(['roole']);
     },
 
-    // levels for build
+    getLevelsMap : function() {
+        return {
+            'desktop':
+
+            // bem-core levels without i-bem.js
+            [
+                'common.blocks'
+            ].map(function(level){ return path.join(dirs.libs, 'bem-core', level); })
+
+            // bem-protein levels
+            .concat(
+                [
+                    'common.blocks/base',     'common.blocks/typo',      'common.blocks/grid',
+                    'desktop.blocks/buttons', 'desktop.blocks/forms',    'desktop.blocks/navigation',
+                    'desktop.blocks/lists',   'desktop.blocks/tables',   'desktop.blocks/wrappers',
+                    'desktop.blocks/windows', 'desktop.blocks/progress', 'desktop.blocks/js'
+                ]
+            ),
+
+            'touch-pad': [
+
+                    'common.blocks/base',     'common.blocks/typo',      'common.blocks/grid'
+
+            ],
+            'touch-phone': [
+
+                    'common.blocks/base',     'common.blocks/typo',      'common.blocks/grid'
+                    
+            ]
+        };
+    },
+
     getLevels : function() {
-        // libs levels
-        return [
-            // bem-core without i-bem.js
-            // see how in base/page/page.deps.js
-            // also read about this in
-            'bem-core/common.blocks'
-        ]
-        .map(function(level) { return path.resolve(LIBS_PATH, level); })
-        .concat([
-            'base',
-            'typo',
-            'grid',
-            'buttons',
-            'forms',
-            'navigation',
-            'lists',
-            'tables',
-            'wrappers',
-            'windows',
-            'progress',
-            'js'
-        ]
-        .map(function(level) { return path.resolve(BLOCKS_PATH, level); }));
+        var resolve = path.resolve.bind(path, this.root),
+            buildLevel = this.getLevelPath().split('.')[0],
+            levels = this.getLevelsMap()[buildLevel] || [];
+
+        return levels
+            .map(function(path) { return resolve(path); })
+            .concat(resolve(path.dirname(this.getNodePrefix()), 'blocks'));
     },
 
-    'create-browser.js+bemhtml-optimizer-node': function(tech, sourceNode, bundleNode) {
-        sourceNode.getFiles().forEach(function(f) {
-            this['create-js-optimizer-node'](tech, this.ctx.arch.getNode(f), bundleNode);
-        }, this);
-    },
-
-    'create-prefix.css-node' : function(tech, bundle, magic) {
-        return this.createDefaultTechNode.call(this, 'css', bundle, magic);
-    },
-
-    'create-prefix.css-optimizer-node' : function(tech, sourceNode, bundle) {
-        var borschikCss = this['create-css-optimizer-node'];
-        return borschikCss.apply(this, arguments).map(function(source) {
-            var node = this.createAutoprefixerNode(tech, source, bundle);
-            return borschikCss.call(this, tech, node, bundle);
-        }, this);
+    'create-css-node' : function(tech, bundleNode, magicNode) {
+        var source = this.getBundlePath('roole');
+        if(this.ctx.arch.hasNode(source)) {
+            return this.createAutoprefixerNode(tech, this.ctx.arch.getNode(source), bundleNode, magicNode);
+        }
     }
 
 });
 
-// this is node based on autoprefixer
-// more info here: https://github.com/ai/autoprefixer
 MAKE.decl('AutoprefixerNode', {
+
+    getPlatform : function() {
+        return this.output.split('.')[0];
+    },
+
     getBrowsers : function() {
-        // support browsers: only 2 last versions
-        return [
-            'last 2 versions'
-        ];
+        var platform = this.getPlatform();
+        switch(platform) {
+
+        case 'desktop':
+            return [
+                'last 2 versions',
+                'ie 10',
+                'ff 24',
+                'opera 12.16'
+            ];
+
+        case 'touch-pad':
+            return [
+                'android 4',
+                'ios 5'
+            ];
+
+        case 'touch-phone':
+            return [
+                'android 4',
+                'ios 6',
+                'ie 10'
+            ];
+
+        }
+
+        return this.__base();
     }
 
 });

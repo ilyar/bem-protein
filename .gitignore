@@ -3,11 +3,11 @@ node_modules
 dist
 .tmp
 .sass-cache
-bower_components
-test/bower_components
+libs
+test/libs
 .DS_Store
 .project
 .bem/cache/
-examples/*/*.*
-!examples/*/*.bemjson.js
-!examples/.bem/*
+*.examples/*/*.*
+!*.examples/*/*.bemjson.js
+!*.examples/.bem/*
