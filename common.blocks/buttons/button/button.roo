@@ -1,0 +1,8 @@
+.button {
+    display:    inline-block;
+    font-size:  $large_font_size;
+    border:     $btn_base_border_width;
+    padding:    $btn_base_padding;
+    background: $btn_base_bkg;
+    color:      $btn_base_color;
+}

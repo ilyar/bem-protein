@@ -1,3 +1,16 @@
+// FONT SETTINGS
+// ===============================
+
+$small_font_size  = 80%;
+$medium_font_size = 100%;
+$large_font_size  = 120%;
+
+// PALETTE
+// ===============================
+
+$success_bkg   = #8cc63f;
+$success_color = #fff;
+
 // CONTROL TEXT DIRECTION SETTINGS
 // ===============================
 
@@ -12,12 +25,7 @@ $total_columns = 12;
 $line_width    = $convert_to_rem(1000, $rem_base);
 $column_gutter = $convert_to_rem(30, $rem_base);
 
-
 // MEDIA QUERIES
-//
-// maybe add for xl displays:
-// - from 90.063em to 120em
-// - from 120.063em to 99999999em
 // ===============================
 
 $screen       = "only screen";
@@ -34,6 +42,30 @@ $medium_only  = "$screen and (min-width: 40.063em) and (max-width: 64em)";
 $large_up     = "$screen and (min-width: 64.063em)";
 $large_only   = "$screen and (min-width: 64.063em) and (max-width: 90em)";
 
+/*
+* maybe add for xl displays:
+* -> from 90.063em to 120em
+* -> from 120.063em to 99999999em
+*/
+
 $small        = $medium_up;
 $medium       = $medium_up;
 $large        = $large_up;
+
+// BUTTONS SETTINGS
+// ===============================
+
+$btn_base_bkg          = #cccccc;
+$btn_base_color        = #000;
+$btn_base_padding      = 10px;
+$btn_base_border_width = 0;
+
+$btn_success_bkg   = $success_bkg;
+$btn_success_color = $success_color;
+
+// RADIUS OF ROUNDED CORNERS AND ETC
+// ===============================
+
+$small_radius  = 2px;
+$medium_radius = $small_radius * 2;
+$large_radius  = $medium_radius * 2;
