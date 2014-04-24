@@ -1,6 +1,4 @@
 // STRIP UNIT
-//
-// It strips the unit of measure and returns it
 // ============================================
 
 $strip_unit = @function $num {

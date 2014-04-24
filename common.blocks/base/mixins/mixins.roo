@@ -131,7 +131,6 @@ $grid_html_classes = @function $size {
 
 // INPUTS CONSTRUCTORS
 // ====================================================
-
 $form_element = @function {
     background-color: $input_bg_color;
     font-family:      $input_font_family;

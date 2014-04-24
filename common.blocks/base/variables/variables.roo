@@ -1,6 +1,5 @@
 // FONT SETTINGS
 // ===============================
-
 $small_font_size  = 80%;
 $medium_font_size = 100%;
 $large_font_size  = 120%;
@@ -9,20 +8,17 @@ $color = #000;
 
 // PALETTE
 // ===============================
-
 $base_bkg      = #efeff4;
 $success_bkg   = #8cc63f;
 $success_color = #fff;
 
 // CONTROL TEXT DIRECTION SETTINGS
 // ===============================
-
 $text_direction = left;
 $default_float  = left;
 
 // PADDINGS
 // ===============================
-
 $small_padding  = 10px;
 $medium_padding = $small_padding + 5;
 $large_padding  = $small_padding * 2;
@@ -30,7 +26,6 @@ $xlarge_padding = $medium_padding * 2;
 
 // GRID SETTINGS
 // ===============================
-
 $rem_base      = 16px;
 $total_columns = 12;
 $line_width    = $convert_to_rem(1000, $rem_base);
@@ -38,7 +33,6 @@ $column_gutter = $convert_to_rem(30, $rem_base);
 
 // MEDIA QUERIES
 // ===============================
-
 $screen       = "only screen";
 
 $landscape    = "$screen and (orientation: landscape)";
@@ -65,7 +59,6 @@ $large        = $large_up;
 
 // BUTTONS SETTINGS
 // ===============================
-
 $btn_base_bkg          = #cccccc;
 $btn_base_color        = #000;
 $btn_base_padding      = 10px;
@@ -76,7 +69,6 @@ $btn_success_color = $success_color;
 
 // RADIUS OF ROUNDED CORNERS AND ETC
 // ===============================
-
 $small_radius  = 2px;
 $medium_radius = $small_radius  * 2;
 $large_radius  = $medium_radius * 2;
@@ -84,8 +76,6 @@ $xlarge_radius = $large_radius  * 2;
 
 // FORMS AND INPUTS
 // ===============================
-
-
 $legend_font_size      = $large_font_size;
 $legend_font_weight    = normal;
 $legend_font_color     = $color;
