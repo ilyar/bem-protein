@@ -1,5 +1,51 @@
+@import '../functions/functions.roo';
+
 // CONTROL TEXT DIRECTION SETTINGS
 // ===============================
 
-$text-direction: left;
-$default-float: left;
+$text_direction = left;
+$default_float  = left;
+
+// GRID SETTINGS
+// ===============================
+
+$rem_base      = 16px;
+$total_columns = 12;
+$line_width    = $convert_to_rem(1000, $rem_base);
+$column_gutter = $convert_to_rem(30, $rem_base);
+
+// MEDIA QUERY RANGES
+// ===============================
+
+$small_range   = [0em, 40em];
+$medium_range  = [40.063em, 64em];
+$large_range   = [64.063em, 90em];
+$xlarge_range  = [90.063em, 120em];
+$xxlarge_range = [120.063em, 99999999em];
+
+// MEDIA QUERIES
+// ===============================
+
+$screen       = "only screen";
+
+$landscape    = "$screen and (orientation: landscape)";
+$portrait     = "$screen and (orientation: portrait)";
+
+$small_up     = $screen;
+$small_only   = "$screen and (max-width: $upper_bound($small_range))";
+
+$medium_up    = "$screen and (min-width: $lower_bound($medium_range))";
+$medium_only  = "$screen and (min-width: $lower_bound($medium_range)) and (max-width: $upper_bound($medium_range))";
+
+$large_up     = "$screen and (min-width: $lower_bound($large_range))";
+$large_only   = "$screen and (min-width: $lower_bound($large_range)) and (max-width: $upper_bound($large_range))";
+
+$xlarge_up    = "$screen and (min-width: $lower_bound($xlarge_range))";
+$xlarge_only  = "$screen and (min-width: $lower_bound($xlarge_range)) and (max-width: $upper_bound($xlarge_range))";
+
+$xxlarge-up   = "$screen and (min-width: $lower_bound($xxlarge_range))";
+$xxlarge-only = "$screen and (min-width: $lower-bound($xxlarge-range)) and (max-width: $upper_bound($xxlarge_range))";
+
+$small        = $medium_up;
+$medium       = $medium_up;
+$large        = $large_up;

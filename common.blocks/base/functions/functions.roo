@@ -1,45 +1,44 @@
+@import '../mixins/mixins.roo';
+
 // STRIP UNIT
 // It strips the unit of measure and returns it
 // ============================================
-$strip_unit = @function ($num) {
+$strip_unit = @function $num {
     @return $num / ($num * 0 + 1);
-}
+};
 
 // CONVERT TO REM
 // ============================================
-$convert_to_rem = @function ($value, $base-value: $rem-base)  {
-    $value: $strip_unit($value) / $strip_unit($base-value) * 1rem;
-    @if ($value == 0rem) { $value: 0; } // Turn 0rem into 0
-    @return $value;
-}
 
-// REM CALC
-// New Syntax, allows to optionally calculate on a different base value to counter compounding effect of rem's.
-// Call with 1, 2, 3 or 4 parameters, 'px' is not required but supported:
-//
-//   rem-calc(10 20 30px 40);
-//
-// Space delimited, if you want to delimit using comma's, wrap it in another pair of brackets
-//
-//   rem-calc((10, 20, 30, 40px));
-//
-// Optionally call with a different base (eg: 8px) to calculate rem.
-//
-//   rem-calc(16px 32px 48px, 8px);
-//
-// If you require to comma separate your list
-//
-//   rem-calc((16px, 32px, 48), 8px);
+$convert_to_rem = @function $value, $base_value  {
+    $value = $strip_unit($value) / $strip_unit($base_value) * 1rem;
+    @if $value is 0rem {
+        $value = 0;
+    }
+    @return $value;
+};
+
+// RANGES
+// We use these functions to define ranges for various things, like media queries
 // ============================================
 
-$rem_calc = @function ($values, $base-value: $rem-base) {
-    $max: length($values);
-
-    @if $max == 1 { @return $convert_to_rem(nth($values, 1), $base-value); }
-
-    $remValues: ();
-    @for $i from 1 through $max {
-        $remValues: append($remValues, $convert_to_rem(nth($values, $i), $base-value));
+$lower_bound = @function $range {
+    @if $len($range) <= 0 {
+        @return 0;
     }
-    @return $remValues;
-}
+    @return $range[1];
+};
+
+$upper_bound = @function $range {
+    @if $len($range) < 2 {
+        @return 999999999999;
+    }
+    @return $range[2];
+};
+
+// GRID FUNCTIONS
+// ============================================
+
+$grid_calc = @function $colNumber, $totalColumns {
+    @return (($colNumber / $totalColumns) * 100) + '%';
+};

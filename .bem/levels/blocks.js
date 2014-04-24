@@ -12,13 +12,12 @@ exports.getTechs = function() {
     var techs = {
         'bemdecl.js'           : 'v2/bemdecl.js',
         'deps.js'              : 'v2/deps.js',
-        'roole'                : 'v2/roole',
         'css'                  : 'v2/css',
         'js'                   : 'v2/js-i'
     };
 
     // use techs from project (.bem/techs)
-    [].forEach(getTechResolver(techs, PRJ_TECHS));
+    ['roole'].forEach(getTechResolver(techs, PRJ_TECHS));
 
     // use techs from bem-techs library
     ['bemjson.js', 'md'].forEach(getTechResolver(techs, BEM_TECHS));

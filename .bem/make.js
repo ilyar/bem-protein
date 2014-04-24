@@ -60,7 +60,7 @@ MAKE.decl('BundleNode', {
             'touch-phone': [
 
                     'common.blocks/base',     'common.blocks/typo',      'common.blocks/grid'
-                    
+
             ]
         };
     },
