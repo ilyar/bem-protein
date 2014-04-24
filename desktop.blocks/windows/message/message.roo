@@ -1,0 +1,4 @@
+.message {
+    color:   $color;
+    padding: $large_padding;
+}

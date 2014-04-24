@@ -5,6 +5,8 @@ $small_font_size  = 80%;
 $medium_font_size = 100%;
 $large_font_size  = 120%;
 
+$color = #000;
+
 // PALETTE
 // ===============================
 
