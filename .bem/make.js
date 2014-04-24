@@ -46,7 +46,7 @@ MAKE.decl('BundleNode', {
             .concat(
                 [
                     'common.blocks/base',     'common.blocks/typo',      'common.blocks/grid',
-                    'desktop.blocks/buttons', 'desktop.blocks/forms',    'desktop.blocks/navigation',
+                    'common.blocks/buttons',  'desktop.blocks/forms',    'desktop.blocks/navigation',
                     'desktop.blocks/lists',   'desktop.blocks/tables',   'desktop.blocks/wrappers',
                     'desktop.blocks/windows', 'desktop.blocks/progress', 'desktop.blocks/js'
                 ]
@@ -54,12 +54,14 @@ MAKE.decl('BundleNode', {
 
             'touch-pad': [
 
-                    'common.blocks/base',     'common.blocks/typo',      'common.blocks/grid'
+                    'common.blocks/base',     'common.blocks/typo',      'common.blocks/grid',
+                    'common.blocks/buttons'
 
             ],
             'touch-phone': [
 
-                    'common.blocks/base',     'common.blocks/typo',      'common.blocks/grid'
+                    'common.blocks/base',     'common.blocks/typo',      'common.blocks/grid',
+                    'common.blocks/buttons'
 
             ]
         };
