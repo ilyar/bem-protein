@@ -1,0 +1,4 @@
+.plate {
+    padding:    $xlarge_padding;
+    background: $base_bkg;
+}

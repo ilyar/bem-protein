@@ -8,6 +8,7 @@ $large_font_size  = 120%;
 // PALETTE
 // ===============================
 
+$base_bkg      = #efeff4;
 $success_bkg   = #8cc63f;
 $success_color = #fff;
 
@@ -16,6 +17,14 @@ $success_color = #fff;
 
 $text_direction = left;
 $default_float  = left;
+
+// PADDINGS
+// ===============================
+
+$small_padding  = 10px;
+$medium_padding = $small_padding + 5;
+$large_padding  = $small_padding * 2;
+$xlarge_padding = $medium_padding * 2;
 
 // GRID SETTINGS
 // ===============================
@@ -69,3 +78,4 @@ $btn_success_color = $success_color;
 $small_radius  = 2px;
 $medium_radius = $small_radius * 2;
 $large_radius  = $medium_radius * 2;
+$xlarge_radius = $large_radius * 2;
