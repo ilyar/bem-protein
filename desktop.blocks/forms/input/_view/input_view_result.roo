@@ -1,0 +1,24 @@
+.input_type_text.input_view_result {
+    margin-bottom: $input_bottom_margin;
+
+    .input__label, .input__container {
+        vertical-align: top;
+        display:        inline-block;
+        width:          50%;
+    }
+
+    .input__container {
+        text-align: right;
+    }
+
+    .input__control, .input__control:focus {
+        display:       inline-block;
+        background:    transparent;
+        border:        0;
+        box-shadow:    none;
+        margin-bottom: 0;
+        text-align:    right;
+        width:         75%;
+    }
+
+}

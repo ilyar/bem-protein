@@ -1,3 +1,0 @@
-block('input').elem('postfix')(
-    tag()('span')
-)

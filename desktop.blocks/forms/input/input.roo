@@ -1,0 +1,83 @@
+.input {
+
+    .input__label {
+        @mixin $form_label;
+        user-select: none;
+    }
+
+}
+
+.input_type_select .input__control {
+    -webkit-appearance:  none !important;
+    background-color:    $select_bg_color;
+    background-image:    url('data:image/svg+xml;base64, PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI2cHgiIGhlaWdodD0iM3B4IiB2aWV3Qm94PSIwIDAgNiAzIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA2IDMiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwb2x5Z29uIHBvaW50cz0iNS45OTIsMCAyLjk5MiwzIC0wLjAwOCwwICIvPjwvc3ZnPg==');
+    background-repeat:   no-repeat;
+    background-position: 97% center;
+    border:              $input_border_width $input_border_style $input_border_color;
+    height:              44px;
+    padding-left:        $small_padding;
+    padding-right:       $small_padding;
+    font-size:           $input_font_size;
+    transition:          border-color $input_animations_duration $input_animations_type;
+
+    &:hover {
+        background-color: $select_hover_bg_color;
+        border-color:     $input_focus_border_color;
+    }
+}
+
+.input_type_select .input__control::-ms-expand {
+    display: none;
+}
+
+.input_type_text,
+.input_type_password,
+.input_type_card_number,
+.input_type_date,
+.input_type_datetime,
+.input_type_datetime-local,
+.input_type_month,
+.input_type_week,
+.input_type_email,
+.input_type_number,
+.input_type_search,
+.input_type_tel,
+.input_type_time,
+.input_type_url,
+.input_type_textarea {
+
+    .input__control {
+        -webkit-appearance: none;
+        @mixin $form-element;
+        transition: all $input_animations_duration $input_animations_type;
+    }
+
+}
+
+.input_type_file,
+.input_type_checkbox,
+.input_type_radio,
+.input_type_select {
+
+    .input__control {
+        margin: 0 0 $input_bottom_margin 0;
+    }
+
+}
+
+.input_type_checkbox .input__container + .input__label,
+.input_type_radio .input__container + .input__label {
+    display: inline-block;
+    margin-right: 5px;
+    margin-bottom: 0;
+    vertical-align: baseline;
+}
+
+/* Normalize file input width */
+.input_type_file .input__control {
+    width: 100%;
+}
+
+.input .input__control {
+    outline: none;
+}

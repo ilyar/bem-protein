@@ -1,7 +1,7 @@
 .input_type_checkbox {
 
     .input__container {
-        display: inline-block;
+        display:      inline-block;
         margin-right: 10px;
 
         .input__control {
@@ -10,9 +10,8 @@
     }
 
     .input__inner {
-        display: inline-block;
         vertical-align: middle;
-        line-height: 2em;
+        display:        inline-block;
     }
 
 }

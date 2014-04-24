@@ -93,3 +93,33 @@ $legend_font_color     = $color;
 $fieldset_border_width = 1px;
 $fieldset_padding      = $xlarge_padding;
 $fieldset_margin       = 0;
+
+$form_label_pointer       = pointer;
+$form_label_font_size     = 18px;
+$form_label_font_weight   = normal;
+$form_label_line_height   = 1.5;
+$form_label_font_color    = $color;
+$form_label_bottom_margin = 0;
+
+$input_font_family = inherit;
+$input_font_color  = rgba(0,0,0,0.75);
+$input_font_size   = $large_font_size;
+
+$input_bottom_margin = 15px;
+
+$input_bg_color       = #fff;
+$input_focus_bg_color = #fff;
+$input_disabled_bg    = #ddd;
+
+$input_animations_duration = 200ms;
+$input_animations_type     = linear;
+
+$input_border_color       = #ccc;
+$input_focus_border_color = #ccc;
+$input_border_style       = solid;
+$input_border_width       = 1px;
+
+$input_box_shadow = inset 0 1px 2px rgba(0,0,0,0.1);
+
+$select_bg_color       = #fafafa;
+$select_hover_bg_color = #fff;
