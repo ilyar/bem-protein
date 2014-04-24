@@ -4,10 +4,6 @@
 
 - fork from normalize.css
 
-[+]__variables__
-
-[+]__functions__
-
 [+]__page__:
 
 - html>head+body;

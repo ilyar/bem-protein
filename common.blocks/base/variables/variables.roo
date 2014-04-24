@@ -1,0 +1,5 @@
+// CONTROL TEXT DIRECTION SETTINGS
+// ===============================
+
+$text-direction: left;
+$default-float: left;
