@@ -1,8 +1,8 @@
-@import '../mixins/mixins.roo';
-
 // STRIP UNIT
+//
 // It strips the unit of measure and returns it
 // ============================================
+
 $strip_unit = @function $num {
     @return $num / ($num * 0 + 1);
 };
@@ -18,27 +18,10 @@ $convert_to_rem = @function $value, $base_value  {
     @return $value;
 };
 
-// RANGES
-// We use these functions to define ranges for various things, like media queries
-// ============================================
-
-$lower_bound = @function $range {
-    @if $len($range) <= 0 {
-        @return 0;
-    }
-    @return $range[1];
-};
-
-$upper_bound = @function $range {
-    @if $len($range) < 2 {
-        @return 999999999999;
-    }
-    @return $range[2];
-};
-
 // GRID FUNCTIONS
 // ============================================
 
 $grid_calc = @function $colNumber, $totalColumns {
-    @return (($colNumber / $totalColumns) * 100) + '%';
+    $percentage = ($colNumber / $totalColumns) * 100;
+    @return {$percentage}%;
 };
