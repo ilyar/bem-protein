@@ -62,7 +62,7 @@
         font-size:          $input_font_size;
         margin:             0 0 15px 0;  // TODO: remove hardcode
         padding:            12px;  // TODO: remove hardcode
-        height:             ($input_font_size + 24px);
+        height:             44px;  // TODO: remove hardcode
         width:              100%;
         transition:         all $input_animations_duration $input_animations_type;
 
