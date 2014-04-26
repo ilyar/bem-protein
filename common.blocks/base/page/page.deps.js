@@ -4,8 +4,8 @@
     ],
     mustDeps: [
         {block: 'functions'},
-        {block: 'mixins'},
-        {block: 'variables'}
+        {block: 'variables'},
+        {block: 'mixins'}
     ],
     shouldDeps: [
         {elem: 'reset'},
