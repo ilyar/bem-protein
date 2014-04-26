@@ -1,3 +1,3 @@
 .button_rounded {
-    border-radius: $meduim_radius;
+    border-radius: $medium_radius;
 }
