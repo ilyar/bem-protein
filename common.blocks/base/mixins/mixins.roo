@@ -128,34 +128,3 @@ $grid_html_classes = @function $size {
         float: left;
     }
 };
-
-// INPUTS CONSTRUCTORS
-// ====================================================
-$form_element = @function {
-    background-color: $input_bg_color;
-    font-family:      $input_font_family;
-    border:           $input_border_width $input_border_style $input_border_color;
-    box-shadow:       $input_box_shadow;
-    color:            $input_font_color;
-    font-size:        $input_font_size;
-    margin:           0 0 15px 0;
-    padding:          12px;
-    height:           ($input_font_size + 24px);
-    width:            100%;
-
-    &:focus {
-        background:   $input_focus_bg_color;
-        border-color: $input_focus_border_color;
-        outline:      none;
-    }
-};
-
-$form_label = @function {
-    display:       block;
-    font-size:     $form_label_font_size;
-    color:         $form_label_font_color;
-    cursor:        $form_label_pointer;
-    font-weight:   $form_label_font_weight;
-    line-height:   $form_label_line_height;
-    margin-bottom: $form_label_bottom_margin;
-};

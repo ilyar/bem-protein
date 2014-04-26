@@ -1,8 +1,14 @@
 .input {
 
     .input__label {
-        @mixin $form_label;
-        user-select: none;
+        display:       block;
+        font-size:     $form_label_font_size;
+        color:         $form_label_font_color;
+        cursor:        $form_label_pointer;
+        font-weight:   $form_label_font_weight;
+        line-height:   $form_label_line_height;
+        margin-bottom: $form_label_bottom_margin;
+        user-select:   none;
     }
 
 }
@@ -14,7 +20,7 @@
     background-repeat:   no-repeat;
     background-position: 97% center;
     border:              $input_border_width $input_border_style $input_border_color;
-    height:              44px;
+    height:              44px; // TODO: remove hardcode
     padding-left:        $small_padding;
     padding-right:       $small_padding;
     font-size:           $input_font_size;
@@ -48,8 +54,24 @@
 
     .input__control {
         -webkit-appearance: none;
-        @mixin $form_element;
-        transition: all $input_animations_duration $input_animations_type;
+        background-color:   $input_bg_color;
+        font-family:        $input_font_family;
+        border:             $input_border_width $input_border_style $input_border_color;
+        box-shadow:         $input_box_shadow;
+        color:              $input_font_color;
+        font-size:          $input_font_size;
+        margin:             0 0 15px 0;  // TODO: remove hardcode
+        padding:            12px;  // TODO: remove hardcode
+        height:             ($input_font_size + 24px);
+        width:              100%;
+        transition:         all $input_animations_duration $input_animations_type;
+
+        &:focus {
+            background:   $input_focus_bg_color;
+            border-color: $input_focus_border_color;
+            outline:      none;
+        }
+
     }
 
 }
