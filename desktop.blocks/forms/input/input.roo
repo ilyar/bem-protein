@@ -48,7 +48,7 @@
 
     .input__control {
         -webkit-appearance: none;
-        @mixin $form-element;
+        @mixin $form_element;
         transition: all $input_animations_duration $input_animations_type;
     }
 
