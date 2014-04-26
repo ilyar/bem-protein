@@ -1,8 +1,10 @@
 .line {
     @mixin $grid_row(false);
+    @mixin $clearfix;
 
     .line {
         @mixin $grid_row(true);
+        @mixin $clearfix;
     }
 }
 

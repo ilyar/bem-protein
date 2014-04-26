@@ -35,7 +35,6 @@ $grid_row = @function $nest = false {
         max-width: $line_width;
     }
 
-    @mixin $clearfix;
 };
 
 /*
