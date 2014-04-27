@@ -7,7 +7,7 @@ require('bem-tools-autoprefixer').extendMake(MAKE);
 
 MAKE.decl('Arch', {
 
-    blocksLevelsRegexp : /^.+?\.blocks/,
+    blocksLevelsRegexp : /^.+?(\.blocks|\.design)/,
     bundlesLevelsRegexp : /^.+?\.examples$/
 
 });
@@ -45,24 +45,41 @@ MAKE.decl('BundleNode', {
             // bem-protein levels
             .concat(
                 [
-                    'common.blocks/base',     'common.blocks/typo',      'common.blocks/grid',
-                    'common.blocks/buttons',  'desktop.blocks/forms',    'desktop.blocks/navigation',
-                    'desktop.blocks/lists',   'desktop.blocks/tables',   'desktop.blocks/wrappers',
-                    'desktop.blocks/windows', 'desktop.blocks/progress', 'desktop.blocks/js'
+                    'common.blocks/base',
+                    'common.design/base',
+                    'common.blocks/typo',
+                    'common.blocks/grid',
+                    'common.blocks/buttons',
+                    'common.design/buttons',
+                    'desktop.blocks/forms',
+                    'desktop.design/forms',
+                    'desktop.blocks/navigation',
+                    'desktop.blocks/lists',
+                    'desktop.blocks/tables',
+                    'desktop.blocks/wrappers',
+                    'desktop.design/wrappers',
+                    'desktop.blocks/windows',
+                    'desktop.design/windows',
+                    'desktop.blocks/progress',
+                    'desktop.blocks/js'
                 ]
             ),
 
             'touch-pad': [
-
-                    'common.blocks/base',     'common.blocks/typo',      'common.blocks/grid',
-                    'common.blocks/buttons'
-
+                    'common.blocks/base',
+                    'common.design/base',
+                    'common.blocks/typo',
+                    'common.blocks/grid',
+                    'common.blocks/buttons',
+                    'common.design/buttons'
             ],
             'touch-phone': [
-
-                    'common.blocks/base',     'common.blocks/typo',      'common.blocks/grid',
-                    'common.blocks/buttons'
-
+                    'common.blocks/base',
+                    'common.design/base',
+                    'common.blocks/typo',
+                    'common.blocks/grid',
+                    'common.blocks/buttons',
+                    'common.design/buttons'
             ]
         };
     },
