@@ -1,0 +1,5 @@
+.line {
+    background: #eee;
+    border: solid 1px #c6c6c6;
+    margin-bottom: 5px;
+}

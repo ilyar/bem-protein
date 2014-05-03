@@ -1,0 +1,6 @@
+// GRID SETTINGS
+// ===============================
+$rem_base      = 16px;
+$total_columns = 12;
+$line_width    = $convert_to_rem(1000, $rem_base);
+$column_gutter = $convert_to_rem(30, $rem_base);

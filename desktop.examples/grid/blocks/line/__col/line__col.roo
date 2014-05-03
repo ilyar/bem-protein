@@ -1,0 +1,8 @@
+.line__col {
+    padding-left: 10px;
+    line-height: 2rem;
+
+    &:nth-child(2) {
+        background: #e1e1e1;
+    }
+}
