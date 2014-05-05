@@ -2,43 +2,146 @@
     block: 'page',
     title: 'Grid examples',
     favicon: 'favicon.ico',
-    head: [{ elem: 'meta', attrs: { name: 'description', content: '' }}],
-    styles: [{ elem: 'css', url: '_grid.css', ie: false }],
+    head: [
+        { elem: 'meta', attrs: { name: 'viewport', content: 'width=device-width, initial-scale=1' } },
+        { elem: 'css', url: '_grid.css' }
+    ],
+    scripts: [{ elem: 'js', url: '_grid.js' }],
     content:[
         {
-            elem: 'header',
-            tag: 'header',
-            content: [
-                { tag: 'h2', content: 'Test' }
-            ]
+            elem: 'title',
+            tag: 'h1',
+            content: 'Grid examples'
         },
         {
             elem: 'content',
-            tag: 'main',
-            attrs: { role: 'main' },
             content: [
+                {
+                    elem: 'subtitle',
+                    tag: 'h2',
+                    content: 'dlw - display large width'
+                },
                 {
                     block: 'line',
                     content: [
                         {
                             elem: 'col',
-                            mods: {'dlw': 2}
+                            mods: {'dlw': 4},
+                            content: '4'
                         },
                         {
                             elem: 'col',
-                            mods: {'dlw': 10}
+                            mods: {'dlw': 4},
+                            content: '4'
+                        },
+                        {
+                            elem: 'col',
+                            mods: {'dlw': 4},
+                            content: '4'
+                        }
+                    ]
+                },
+                {
+                    block: 'line',
+                    content: [
+                        {
+                            elem: 'col',
+                            mods: {'dlw': 3},
+                            content: '3'
+                        },
+                        {
+                            elem: 'col',
+                            mods: {'dlw': 6},
+                            content: '6'
+                        },
+                        {
+                            elem: 'col',
+                            mods: {'dlw': 3},
+                            content: '3'
+                        }
+                    ]
+                },
+                {
+                    block: 'line',
+                    content: [
+                        {
+                            elem: 'col',
+                            mods: {'dlw': 2},
+                            content: '2'
+                        },
+                        {
+                            elem: 'col',
+                            mods: {'dlw': 8},
+                            content: '8'
+                        },
+                        {
+                            elem: 'col',
+                            mods: {'dlw': 2},
+                            content: '2'
+                        }
+                    ]
+                },
+                {
+                    block: 'line',
+                    content: [
+                        {
+                            elem: 'col',
+                            mods: {'dlw': 3},
+                            content: '3'
+                        },
+                        {
+                            elem: 'col',
+                            mods: {'dlw': 9},
+                            content: '9'
+                        }
+                    ]
+                },
+                {
+                    block: 'line',
+                    content: [
+                        {
+                            elem: 'col',
+                            mods: {'dlw': 4},
+                            content: '4'
+                        },
+                        {
+                            elem: 'col',
+                            mods: {'dlw': 8},
+                            content: '8'
+                        }
+                    ]
+                },
+                {
+                    block: 'line',
+                    content: [
+                        {
+                            elem: 'col',
+                            mods: {'dlw': 5},
+                            content: '5'
+                        },
+                        {
+                            elem: 'col',
+                            mods: {'dlw': 7},
+                            content: '7'
+                        }
+                    ]
+                },
+                {
+                    block: 'line',
+                    content: [
+                        {
+                            elem: 'col',
+                            mods: {'dlw': 6},
+                            content: '6'
+                        },
+                        {
+                            elem: 'col',
+                            mods: {'dlw': 6},
+                            content: '6'
                         }
                     ]
                 }
             ]
-        },
-        {
-            elem: 'footer',
-            tag: 'footer',
-            content: [
-
-            ]
         }
-    ],
-    scripts: [{ elem: 'js', url: '_grid.js' }]
+    ]
 })
